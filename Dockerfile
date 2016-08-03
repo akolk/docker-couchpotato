@@ -12,16 +12,18 @@ RUN mkdir /opt && \
 ## Expose port
 EXPOSE 5050
 
+## Create config and data folder
 RUN mkdir -p /config
 RUN mkdir -p /data
 
+## Create config file
 RUN touch /config/CouchPotato.cfg
 
-## Map volume for configuration and data
-Volume /config /movies /data
+## Map volume for configuration, data and movies
+Volume /config /data /movies
 
 ## Set working directory
 WORKDIR /opt
 
-## Run Couchpotato
+## Run Couchpotato with parameter to indicate where are data and config folder
 ENTRYPOINT ["python", "CouchPotatoServer/CouchPotato.py", "--data_dir",  "/data/", "--config_file=/config/CouchPotato.cfg"]
