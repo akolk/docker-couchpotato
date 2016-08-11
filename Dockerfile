@@ -15,9 +15,6 @@ EXPOSE 5050
 ## Create config, data and movies folder
 RUN mkdir -p config data movies
 
-## Create config file
-RUN touch config/CouchPotato.cfg
-
 ## Map volume for configuration, data and movies
 Volume config data movies
 
