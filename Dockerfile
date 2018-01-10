@@ -11,8 +11,9 @@ RUN apk update && \
 RUN mkdir -p /opt/couchpotato \
     && cd /opt/couchpotato \
     && git clone https://github.com/CouchPotato/CouchPotatoServer.git \
-    && mkdir -p /volumes/config /volumes/data /volumes/media \
-    && touch /volumes/config/CouchPotato.cfg
+    && mkdir -p /volumes/config /volumes/data /volumes/media
+
+ADD CouchPotato.cfg /volumes/config/CouchPotato.cfg
 
 ## Expose port
 EXPOSE 5050
