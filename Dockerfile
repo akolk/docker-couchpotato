@@ -1,11 +1,16 @@
-FROM hypriot/rpi-alpine-scratch
+FROM python:2.7-alpine3.7
+
+# set version label
+LABEL maintainer="carlosedp"
+
+RUN apk update && \
+    apk upgrade && \
+    apk add --update git python
 
 ## Update base image and install prerequisites
-RUN apk add --update git python \
-    && rm -rf /var/cache/apk/* \
-    && mkdir -p /opt/couchpotato \
+RUN mkdir -p /opt/couchpotato \
     && cd /opt/couchpotato \
-    && git clone https://github.com/RuudBurger/CouchPotatoServer.git \
+    && git clone https://github.com/CouchPotato/CouchPotatoServer.git \
     && mkdir -p /volumes/config /volumes/data /volumes/media \
     && touch /volumes/config/CouchPotato.cfg
 
