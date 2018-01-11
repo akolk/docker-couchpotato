@@ -5,10 +5,8 @@ LABEL maintainer="carlosedp"
 
 RUN apk update && \
     apk upgrade && \
-    apk add --update git python
-
-## Clean apk cache files
-RUN rm -rf /var/cache/apk/*
+    apk add --update git python && \
+    rm -rf /var/cache/apk/*
 
 ## Update base image and install prerequisites
 RUN mkdir -p /opt/couchpotato \
