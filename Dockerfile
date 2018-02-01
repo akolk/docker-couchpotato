@@ -37,4 +37,4 @@ VOLUME /volumes/config /volumes/data /volumes/media
 WORKDIR /opt/couchpotato
 
 ## Run Couchpotato with parameter to indicate where are data and config folder
-ENTRYPOINT ["python", "CouchPotatoServer/CouchPotato.py", "--data_dir",  "/volumes/data/", "--config_file=/volumes/config/CouchPotato.cfg"]
+CMD ["python", "CouchPotatoServer/CouchPotato.py", "--data_dir",  "/volumes/data/", "--config_file=/volumes/config/CouchPotato.cfg"]
