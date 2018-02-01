@@ -1,11 +1,22 @@
-FROM python:2.7-alpine3.7
+ARG target=amd64
+FROM $target/alpine
 
 # set version label
 LABEL maintainer="carlosedp"
 
+ARG arch=amd64
+ENV ARCH=$arch
+
+# set python to use utf-8 rather than ascii
+ENV PYTHONIOENCODING="UTF-8"
+# > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
+ENV LANG C.UTF-8
+
+COPY tmp/qemu-$ARCH-static /usr/bin/qemu-$ARCH-static
+
 RUN apk update && \
     apk upgrade && \
-    apk add --update git python && \
+    apk add --update git python2 && \
     rm -rf /var/cache/apk/*
 
 ## Update base image and install prerequisites
