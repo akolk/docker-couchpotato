@@ -2,7 +2,7 @@
 
 # carlosedp/couchpotato
 
-[![Build Status](https://travis-ci.org/carlosedp/docker-couchpotato.svg?branch=master)](https://travis-ci.org/carlosedp/docker-sickrage)[![](https://images.microbadger.com/badges/image/carlosedp/couchpotato.svg)](https://microbadger.com/images/carlosedp/couchpotato "Get your own image badge on microbadger.com")
+[![Build Status](https://travis-ci.org/carlosedp/docker-couchpotato.svg?branch=master)](https://travis-ci.org/carlosedp/docker-sickrage) [![](https://images.microbadger.com/badges/image/carlosedp/couchpotato.svg)](https://microbadger.com/images/carlosedp/couchpotato "Get your own image badge on microbadger.com")
 
 Automatic Movie downloader docker image. It watches for new episodes of your favorite shows, and when they are posted it does its magic. [Sickrage](https://sickrage.github.io/)
 
