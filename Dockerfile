@@ -16,8 +16,10 @@ COPY .blank tmp/qemu-$ARCH-static* /usr/bin/
 
 RUN apk update && \
     apk upgrade && \
-    apk add --update git python2 && \
+    apk add --update git python2 py-pip python-dev build-base libxml2 libxml2-dev libxslt-dev libffi-dev openssl-dev && \
     rm -rf /var/cache/apk/*
+
+RUN pip install lxml pyopenssl
 
 ## Update base image and install prerequisites
 RUN mkdir -p /opt/couchpotato \
